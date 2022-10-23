@@ -1,0 +1,27 @@
+# control.h task.h
+!control.cpp control.h graphics.h keys_n_colors.h #<#>
+!main.cpp control.h graphics.h keys_n_colors.h task.h #<#>
+!task.cpp cmath.h cstdlib ctime graphics.h keys_n_colors.h task.h #<#>
+ struct@Control _type_ #<control.h>
+COLOR_MAX #<task.h>
+M_PI #<task.h>
+SIZEBUTTON #<task.h>
+SIZEWINDOW #<task.h>
+_USE_MATH_DEFINES #<task.cpp>
+build() -> void #<task.h>
+circle_1(int x_0, int y_0, int R) -> void #<task.cpp>
+circles(int x_0, int y_0, int R) -> void #<task.cpp>
+control_values : enum #<control.h>
+controls : Control[] #<control.cpp>
+create_control(int i, int left, int top, const char* file_name) -> void #<control.cpp>
+create_control(int, int, int) -> void #<control.h>
+design : bool #<task.cpp>
+main() -> int #<main.cpp>
+newpaint() -> void #<task.h>
+paint(int x_0, int y_0, int basic) -> void #<task.cpp>
+save() -> void #<task.h>
+select_control() -> int #<control.h>
+	Control::left : int #<control.h>
+	Control::top : int #<control.h>
+	Control::right : int #<control.h>
+	Control::bottom : int #<control.h>
