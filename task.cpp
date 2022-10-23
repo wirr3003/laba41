@@ -1,4 +1,4 @@
-#include <cmath.h>
+#include <cmath>
 #include "graphics.h"
 #include <cstdlib>
 #include "task.h"
@@ -11,19 +11,19 @@ bool design=false;//можно ли сделать true и там где !=, заменить на false
 
 void circles( int x_0, int y_0, int R)
 {
-   int circles = COLOR_MAX;
+   int color = COLOR_MAX;
    int x_1 = 0, y_1 = R, p = 3-2*R;
    
-   while(x<=y)
+   while(x_1<=y_1)
       {
-         putpixel(x_0 + x, y_0 + y, color);
-         putpixel(x_0 + x, y_0 - y, color);
-         putpixel(x_0 - x, y_0 + y, color);
-         putpixel(x_0 - x, y_0 - y, color);
-         putpixel(x_0 + y, y_0 + x, color);
-         putpixel(x_0 + y, y_0 - x, color);
-         putpixel(x_0 - y, y_0 + x, color);
-         putpixel(x_0 - y, y_0 - x, color);
+         putpixel(x_0 + x_1, y_0 + y_1, color);
+         putpixel(x_0 + x_1, y_0 - y_1, color);
+         putpixel(x_0 - x_1, y_0 + y_1, color);
+         putpixel(x_0 - x_1, y_0 - y_1, color);
+         putpixel(x_0 + y_1, y_0 + x_1, color);
+         putpixel(x_0 + y_1, y_0 - x_1, color);
+         putpixel(x_0 - y_1, y_0 + x_1, color);
+         putpixel(x_0 - y_1, y_0 - x_1, color);
          
          if(p > 0)
             {
@@ -34,7 +34,7 @@ void circles( int x_0, int y_0, int R)
          {
             p += 4 * x_1 + 6;
          }
-         x_1++
+         x_1++;
       }
 }
 void paint(int x_0,int y_0, int basic) //seed color = basic
@@ -56,7 +56,7 @@ void paint(int x_0,int y_0, int basic) //seed color = basic
       {
          x_1 = x_0 + R1[i] * cos(j * df);
          y_1 = y_0 + R1[i]  *sin(j * df);
-         floodfill(x, y, COLOR_MAX);
+         floodfill(x_1, y_1, COLOR_MAX);
       }
    }
    for (int i = 0; i < 4; i++) 
@@ -72,10 +72,10 @@ void paint(int x_0,int y_0, int basic) //seed color = basic
 }
 void circle_1(int x_0, int y_0, int R) 
 {
-   cycle(x_0,y_0,R);
+   circles(x_0,y_0,R);
    for (int i = 1; i <= 12; i++)
    {
-      cycle(x_0+R * cos((M_PI/6)*i), y_0+R * sin((M_PI/6) * i),  R);
+      circles(x_0+R * cos((M_PI/6)*i), y_0+R * sin((M_PI/6) * i),  R);
    }
 }
 
@@ -93,7 +93,7 @@ void newpaint() {
    setfillstyle(SOLID_FILL, basic);
 
    paint(WIDTH/2,(WIDTH-FRAMELOWER)/2, basic);
-   cycle(3*WIDTH/5+INDENT, HIEGHT-INDENT-3*FRAMESIDE/2,INDENT+1);   // 3*FRAMELOWER-FRAMESIDE ,5*FRAMELOWER-FRAMESIDE ,INDENT-1
+   circles(3*WIDTH/5+INDENT, HIEGHT-INDENT-3*FRAMESIDE/2,INDENT+1);   // 3*FRAMELOWER-FRAMESIDE ,5*FRAMELOWER-FRAMESIDE ,INDENT-1
    floodfill(3*WIDTH/5+INDENT, HIEGHT-INDENT-3*FRAMESIDE/2,COLOR_MAX);
 }
 

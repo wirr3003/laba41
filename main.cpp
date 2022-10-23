@@ -5,7 +5,7 @@
 int main() {
    initwindow(1000, 800);
    
-   create_control(BUILDING, SIZEBUTTON, SIZEWINDOW-SIZEBUTTON, "circle.bmp");
+   create_control(PAINT, SIZEBUTTON, SIZEWINDOW-SIZEBUTTON, "circle.bmp");
    create_control(CIRCLE, 3*SIZEBUTTON, SIZEWINDOW-SIZEBUTTON, "paint.bmp");
    create_control(SAVE, 11*SIZEBUTTON, SIZEWINDOW-SIZEBUTTON, "SAVE.bmp");
    create_control(EXIT, 13*SIZEBUTTON, SIZEWINDOW-SIZEBUTTON, "EXIT.bmp");
@@ -18,7 +18,7 @@ int main() {
       {
       case NONE:
          break;
-      case BUILDING:
+      case PAINT:
          build();
          break;
       case CIRCLE:

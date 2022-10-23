@@ -14,7 +14,7 @@ struct Control{
    int bottom;
 };
 
-void create_control(int, int, int);//почему здесь пишет ошибку
+void create_control(int, int, int, const char*);//почему здесь пишет ошибку
 //void create_control_1(int, int, int);
 int select_control();
 
